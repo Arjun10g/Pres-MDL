@@ -1,0 +1,441 @@
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Newsreader:opsz,wght@6..72,800&family=Poppins:wght@300;500;700;900&family=Quicksand&family=Sofia&family=Ubuntu&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+.card,
+.content,
+body {
+	overflow: hidden;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('https://64.media.tumblr.com/f13653500e6d68b49f7b3c62501def5a/tumblr_pmd6e6Ol7y1runoqyo7_r1_540.gif');
+    background-size: cover;
+}
+.card,
+.container {
+	display: none;
+	align-items: center;
+}
+.card {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	justify-content: center;
+}
+.container-full,
+.content {
+	width: 1000px;
+	height: 562px;
+}
+.backgroundImage {
+	position: absolute;
+	width: 1000px;
+}
+.boyImage {
+	position: absolute;
+	width: 1000px;
+	z-index: 2;
+	animation: 200s linear infinite blur;
+}
+.content {
+	border-radius: 40px;
+	animation: 200s linear infinite brightness;
+}
+.container {
+	justify-content: center;
+}
+.container-full,
+.face {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.container-full {
+	margin: 0;
+	justify-content: center;
+	transform: scale(1);
+	animation: 200s linear infinite zoom-in;
+}
+.cube,
+.face {
+	width: 870px;
+	height: 190px;
+}
+.cube {
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 480px;
+	transform-style: preserve-3d;
+	perspective-origin: 51% 70%;
+}
+.face,
+.hue {
+	position: absolute;
+}
+.face {
+	background: 0 0;
+	border: 0 solid #000;
+	opacity: 0.5;
+}
+.bottom,
+.top {
+	width: 870px;
+	height: 870px;
+}
+
+.front {
+	transform: translateZ(435px);
+	display: none;
+}
+.back {
+	transform: translateZ(-435px) rotateY(180deg) scaleX(-1);
+}
+.left {
+	transform: translateX(-435px) rotateY(-90deg) scaleX(-1);
+}
+.right {
+	transform: translateX(435px) rotateY(90deg) scaleX(-1);
+}
+.top {
+	transform: translateY(-435px) rotateX(90deg) scaleY(-1);
+}
+.bottom {
+	transform: translateY(-245px) rotateX(-90deg) scaleY(-1);
+}
+.left p {
+	margin-left: 480px;
+	animation: 600s linear infinite left;
+}
+.back p {
+	margin-left: -390px;
+	animation: 600s linear infinite back;
+}
+.right p {
+	margin-left: -1260px;
+	animation: 600s linear infinite right;
+}
+@keyframes left {
+	100% {
+		margin-left: -54000px;
+	}
+}
+@keyframes back {
+	100% {
+		margin-left: -54870px;
+	}
+}
+@keyframes right {
+	100% {
+		margin-left: -55740px;
+	}
+}
+.hue {
+	top: 0;
+	left: 0;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: overlay;
+	background: #1e5799;
+	background: radial-gradient(ellipse at center, #1e5799 0, #7db9e8 100%);
+	opacity: 1;
+}
+.hue.animated {
+	-webkit-animation: 8s infinite filter-animation;
+	animation: 8s infinite filter-animation;
+}
+.container-reflect {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 380px;
+	filter: blur(10px);
+}
+.container-reflect .cube {
+	perspective-origin: 51% -30%;
+}
+.container-reflect .back {
+	transform: translateZ(-435px) rotateY(180deg) scaleX(-1) scaleY(-1);
+}
+.container-reflect .left {
+	transform: translateX(-435px) rotateY(-90deg) scaleX(-1) scaleY(-1);
+}
+.container-reflect .right {
+	transform: translateX(435px) rotateY(90deg) scaleX(-1) scaleY(-1);
+}
+
+.container-reflect p {
+	transform: scaleY(70%);
+}
+
+@keyframes filter-animation {
+	0%,
+	100% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(100deg);
+	}
+}
+@keyframes zoom-in {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(2.5);
+	}
+}
+@keyframes blur {
+	0% {
+		filter: blur(0px);
+	}
+	100% {
+		filter: blur(3px);
+	}
+}
+@keyframes brightness {
+	0% {
+		filter: brightness(1) contrast(1);
+	}
+	100% {
+		filter: brightness(0.8) contrast(1.3);
+	}
+}
+
+.close{
+    position: absolute;
+    /* Bottom Middle */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 2.3s;
+}
+
+.close:hover{
+    color: white;
+}
+
+.start{
+    position: absolute;
+    /* Bottom Middle */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 2.3s;
+}
+
+.start:hover{
+    color: white;
+}
+
+.text{
+    white-space: nowrap;
+	overflow: hidden;
+	font-family: 'Sofia', sans-serif;
+	font-weight: 400;
+	font-size: calc(6em + (190px / 10) * 0.7);
+	padding-top: 20px;
+	color: #fff;
+    word-spacing: 15px;
+}
+
+.presentation{
+    display: none;
+    width: 100%;
+    background: rgba(240, 240, 240, 0.668);
+    padding: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    height: 90%;
+}
+
+/* Active slide effect */
+.slide.active {
+    animation: glowEffect 4.8s infinite alternate ease-in-out;
+    width: 100%;
+}
+
+@keyframes glowEffect {
+    from { box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); }
+    to { box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.6); }
+}
+
+/* Slide Styles */
+.slide {
+    display: none;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Headings and Text */
+.presentation h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.presentation p, ul {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.presentation ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* List Items */
+.presentation ul li {
+    position: relative;
+    padding-left: 25px;
+    transition: 0.5s ease-in-out;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 26px;
+}
+
+/* Custom Bullet Points */
+.presentation ul li::before {
+    content: "•";
+    color: #00aaff; /* Bright neon blue */
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.presentation ul li:hover {
+    transform: translateX(5px);
+    color: white;
+    background: black; /* Bright neon blue */
+}
+
+.presentation ul li:hover::before {
+    color: #ffcc00; /* Changes to yellow on hover */
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 50ch;
+    color: white;
+    opacity: 0.4;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.image{
+    width: 40%;
+    height: auto;
+    /* Center */
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.image img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.side{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.side img{
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+th, td {
+    border: 1px solid #555; /* Dark border color */
+    padding: 8px;
+}
+
+th:first-child {
+    text-transform: uppercase; /* All caps for the first column */
+}
+
+tr:nth-child(even) {
+    background-color: #444; /* Slightly lighter background color for even rows */
+}
+
+.equation{
+    font-size: 35px;
+}
+
+.toggle-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}

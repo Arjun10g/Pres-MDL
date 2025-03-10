@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation MDL</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": { scale: 90 },
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js" integrity="sha512-7xTD1meeGGoAzwZKA0Z8YelV3qAvRltuwACWXpnxtneF7VAMztOTAi3t4laVSaE4Znq4LMPeGUIYWEvKEk5r3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js" integrity="sha512-S6SXKUZ11xkCoD/UuhdXG4B4iiCXng+xW2KCx0lgfQqmdqtjqGgm4WChdYIhO1F/CmH21vnkSUvPEgXNgDwkjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="start">
+        <i class="fas fa-play"></i>
+    </div>
+    <div class=container>
+        <div class=content style=display:block;width:100%;height:auto>
+            <div class=container-full>
+                <div class="animated hue"></div><img class=backgroundImage src="https://drive.google.com/thumbnail?id=1_ZMV_LcmUXLsRokuz6WXGyN9zVCGfAHp&sz=w1920"> <img class=boyImage src="https://drive.google.com/thumbnail?id=1eGqJskQQgBJ67myGekmo4YfIVI3lfDTm&sz=w1920">
+                <div class=container>
+                    <div class=cube>
+                        <div class="face top"></div>
+                        <div class="face bottom"></div>
+                        <div class="face left text"></div>
+                        <div class="face right text"></div>
+                        <div class="face front"></div>
+                        <div class="face back text"></div>
+                    </div>
+                </div>
+                <div class=container-reflect>
+                    <div class=cube>
+                        <div class="face top"></div>
+                        <div class="face bottom"></div>
+                        <div class="face left text"></div>
+                        <div class="face right text"></div>
+                        <div class="face front"></div>
+                        <div class="face back text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    
+    <div class="presentation">
+        <div class="toggle-container" id="toggleFeature">Feature: ON</div>
+        <div class="slide active">
+            <h2>MDL (Minimum Description Length)</h2>
+            <p>MDL is a formal theory of inductive inference closely related to Occam’s Razor.</p>
+            <div class="image">
+                <img src="img1.jpg" alt="">
+            </div>
+            <p>The general idea is that the best model for a given dataset is the one that allows for the shortest encoding of both model and the data. </p>
+            <h2>Information Theory (MDL)</h2>
+            <ul>
+                <li>Better models allow for shorter descriptions of data.</li>
+                <li>Bad models require more bits to describe the data. </li>
+            </ul>
+            <div class="image">
+                <img src="https://files.oaiusercontent.com/file-8zJPkQ1fduwGnNTjL3ibY8?se=2025-03-10T02%3A01%3A23Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Db0e89fd1-8486-4511-8861-bf769b210efa.webp&sig=Pm44BJtVJ1wQS8ejh9gnzrGK9zRnuPN4FKhBw6xtgp0%3D" alt="">
+            </div>
+            <h2>MDL 2 Part Code</h2>
+            <ul>
+                <li>Model description length</li>
+                <li>Data description length given the model</li>
+            </ul>
+            <p class = "equation">\(L(M, D) = L(M) + L(D \mid M)\)</p>
+            <div class="image" style="width: 80%;">
+                <img src="https://files.oaiusercontent.com/file-VZGDbVHka3m581cbcqmW3f?se=2025-03-10T02%3A20%3A36Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D368f49b1-4023-462d-b3a9-5d1966af78f7&sig=zMD%2BdVsojPCRuOMI2/1sEHZizjIi6UgHsPugkksneBA%3D" alt="">
+            </div>
+            <h2>Application</h2>
+            <ul>
+                <li>Model selection</li>
+                <li>Feature selection</li>
+                <li style="color: aqua; background: white;">Parameter tuning</li>
+            </ul>
+
+        </div>
+    
+        <div class="slide">
+            <h2>Stochastic Complexity</h2>
+            <p>Stochastic complexity measures how well a given model class compresses the data while accounting for the complexity of the model itself.</p>
+            <p>\(SC(D) = -\log P(D \mid \hat{\theta}) + C(\hat{\theta})\)</p>
+            <ul>
+                <li>First Term: Measures how well the model fits the data (negative log-likelihood).</li>
+                <li>Second Term: Penalizes model complexity (model description length).</li>
+            </ul>
+            <ul>
+                <li> If a model fits the data well, the first term is low (high likelihood).</li>
+                <li>  If a model is too complex, the second term is high (higher complexity penalty).</li>
+                <li>The best model minimizes both terms, leading to good generalization.</li>
+            </ul>
+            <h2>Application</h2>
+            <div class="image">
+                <img src="img2.jpg" alt="">
+            </div>
+            <h2>AIC</h2>
+            <p>AIC is a special case of stochastic complexity</p>
+            <p>\(AIC = -2 \log L(\hat{\theta}) + 2k\)</p>
+            <ul>
+                <li> \(L(\hat{\theta})\) is the likelihood of the model</li>
+                <li> \(k\) is the number of parameters</li>
+                <li>Parameter complexity term is 2k, meaning that AIC slightly discourages overly complex models.</li>
+            </ul>
+            <h2>BIC</h2>
+            <p>BIC is another special case of stochastic complexity</p>
+            <p>\(BIC = -2 \log L(\hat{\theta}) + k \log n\)</p>
+            <ul>
+                <li> \(n\) is the number of data points</li>
+                <li>Parameter complexity term is \(k \log n\), meaning that BIC discourages overly complex models depending on sample size.</li>
+            </ul>
+            <p>\[AIC = 2k - 2\ln(L)\]</p>
+
+            <p>\[BIC = k\ln(n) - 2\ln(L)\]</p>
+
+            <p>Setting these equal to each other:</p>
+
+            <p>\[2k = k\ln(n)\]</p>
+
+            <p>Solving for \( n \):</p>
+
+            <p>\[n = e^2 \approx 7.39\]</p>
+
+            
+        </div>
+    
+        <div class="slide">
+            <h2>Gram Matrix</h2>
+            <p>Given a dataset \(X \in \mathbb{R}^{n \times p}\), the Gram matrix is defined as \(G = X^T X\).</p>
+            <p>The gram matrix is a square, symmetric, positive semi-definite matrix. Each element of  is computed as:
+            \[G_{ij} = \langle x_i, x_j \rangle\] which represents the dot product between the ith and jth predictors.</p>
+
+            <h2>What does it tell us though?</h2>
+            <p>The Gram matrix provides a measure of similarity between predictors. If two predictors are highly correlated, their dot product will be large, leading to a large value in the Gram matrix.
+            If two predictors are orthogonal, their dot product will be zero, leading to a zero value in the Gram matrix.</p>
+            <ul>
+                <li>Collinearity</li>
+                <li>Feature Redundancy</li>
+                <li>Parameter Complexity</li>
+            </ul>
+            <h2>Eigenvalues</h2>
+            <p>Eigenvalues are special scalars associated with a square matrix that describe its scaling behavior along specific directions.</p>
+            <p>In PCA, eigenvalues of the covariance matrix indicate how much variance each principal component explains.
+                Larger eigenvalues correspond to directions with more variance (important features).
+                Smaller eigenvalues correspond to directions with little variance (can be ignored).
+                </p>
+            <div class="image">
+                <img src="img_r1.png" alt="">
+            </div>
+            <div class="image">
+                <img src="img_r2.png" alt="">
+            </div>
+            <div class="image">
+                <img src="img_r3.png" alt="">
+            </div>
+            <div class="image">
+                <img src="Rplot_4.png" alt="">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Eigenvalue Property</th>
+                        <th>What It Tells Us</th>
+                        <th>Effect on Regression</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Large eigenvalues</td>
+                        <td>Data is well spread in that direction</td>
+                        <td>Important feature directions, stable regression</td>
+                    </tr>
+                    <tr>
+                        <td>Small eigenvalues</td>
+                        <td>Data is compressed in that direction</td>
+                        <td>Possible collinearity, unstable coefficients</td>
+                    </tr>
+                    <tr>
+                        <td>Eigenvalue near zero</td>
+                        <td>Feature redundancy, linear dependence</td>
+                        <td>Model is ill-conditioned, high variance in estimates</td>
+                    </tr>
+                    <tr>
+                        <td>Condition number <strong>κ(G)</strong> is large</td>
+                        <td>Features are highly correlated</td>
+                        <td>Poor numerical stability, large coefficient swings</td>
+                    </tr>
+                    <tr>
+                        <td>Few large eigenvalues, many small ones</td>
+                        <td>Data has an underlying low-dimensional structure</td>
+                        <td>PCA can be useful, remove redundant features</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The eigenvalues of Gram Matrix reveal a lot about the complexity of the model.
+                If most eigenvalues are large, it means that the dataset has high effective dimensionality.
+                If many eigenvalues are small (or zero), it suggests redundancy (some predictors are not contributing much).
+                </p>
+
+            <h2>Trace of the Gram Matrix</h2>
+            <p>The trace of the Gram matrix is simply the sum of its eigen values and is often referred to as a measure of complexity.</p>
+
+            <p>\[\text{Tr}(G) = \sum_{i=1}^{d} \rho_i\]</p>
+            <div class="image">
+                <img src="trace1.png" alt="">
+            </div>
+            <div class="image">
+                <img src="trace2.png" alt="">
+            </div>
+            
+            <p>The log-trace is defined as:</p>
+            
+            <p>\[\log \text{Tr}(G) = \left( \sum_{i=1}^{d}\log  \rho_i \right)\]</p>
+
+            <div class="image">
+                <img src="logtrace.png" alt="">
+            </div>
+
+            <div class="image">
+                <img src="tracelog2.png" alt="">
+            </div>
+            
+            <p>The 1 + log-trace is defined as:</p>
+            
+            <p>\[1 + \log \text{Tr}(G) = \left( \sum_{i=1}^{d}\log  (1 + \rho_i) \right)\]</p>
+
+            <div class="image">
+                <img src="one_logtrace.png" alt="">
+            </div>
+
+            <div class="image">
+                <img src="one_trace_log.png" alt="">
+            </div>
+            <h2>ENOUGHHHH!!</h2>
+            <div class="image">
+                <img src="img3.jpg" alt="">
+            </div>
+
+        </div>
+    
+        <div class="slide">
+            <h2>General Framework of the Proposed Approach</h2>
+            <p>\[MLDCOMP_{min}  = (\text{normalized model fit} + tuning parameter + parameter complexity)\]</p>
+            <ul>
+                <li>First term is the training error</li>
+                <li>Second term is the tuning parameter</li>
+                <li>Third term is the parameter complexity</li>
+            </ul>
+            <h2>Prac MDL - Regression</h2>
+            <p>\[L(\theta) = \left( \frac{1}{2n\sigma^2} \sum_{i=1}^{n} (y_i - X_i \theta)^2 + \frac{1}{2} \sum_{j=1}^{\min(n,d)} \log(1 + \lambda_j) \right)\]
+                </p>
+            <h2>Features</h2>
+            <ul>
+                <li>It scales with sample size</li>
+                <li>It scales with increasing predictors</li>
+                <li>Complexity reduces with strong feature correlations</li>
+            </ul>
+
+            <div class="image">
+                <img src="prac_reg.png" alt="">
+            </div>
+            <div class="image">
+                <img src="prac_reg2.png" alt="">
+            </div>
+            <div class="image">
+                <img src="prac_reg3.png" alt="">
+            </div>
+            <h2>Tuning the Ridge Penalty</h2>
+            <p>MDL-based selection can be a viable alternative to cross-validation for tuning \( \lambda \), reducing overfitting risk.</p>
+            <p>\[\text{Prac-MDL-COMP} = \min \frac{1}{n}\left(\frac{\|X\theta - y\|^2}{2\sigma^2} + \frac{\lambda \|\theta\|^2}{2\sigma^2} + \frac{1}{2}\sum\log \left( 1 + \frac{\rho_i}{\lambda} \right) \right)\]</p>
+            <h2>Tuning the degree of a polynomial</h2>
+            <p>\[\text{Prac-MDL}(d) = \frac{1}{n} \left( \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \frac{1}{2} \sum_{j=1}^{d} \log \left(1 + \frac{\lambda_j}{d} \right) \right)\]</p>
+            <h2>Tuning the span for a loess model</h2>
+            <p>\[\text{Prac-MDL}(s) = \frac{1}{n} \left( \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \frac{1}{2} \log(1 + \text{edf}(s)) \right)\]</p>
+            <h2>Tuning Lambda for LASSO variable selection</h2>
+            <p>\[\text{Prac-MDL}(\lambda) = \frac{1}{n} \left( \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - X_i^\top \hat{\beta})^2 + \frac{\lambda}{2\sigma^2} \sum_{j=1}^{p} |\hat{\beta}_j| + \frac{1}{2} \sum_{j=1}^{\min(n,p)} \log \left( 1 + \frac{\rho_j}{\lambda} \right) \right)\]</p>
+        </div>
+    
+        <div class="slide">
+            <h2>Simulation Results</h2>
+            <div class="image">
+                <img src="img4.jpg" alt="">
+            </div>
+        </div>
+    
+        <div class="slide">
+            <h2>MDL Principle</h2>
+            <p>Selects the model that minimizes the total encoding length of both data and model parameters.</p>
+        </div>
+    
+        <div class="slide">
+            <h2>Comparison: AIC, BIC, and MDL</h2>
+            <ul>
+                <li>AIC favors complex models (predictive accuracy).</li>
+                <li>BIC selects simpler models (true model identification).</li>
+                <li>MDL finds the optimal balance (information compression).</li>
+            </ul>
+        </div>
+    
+        <div class="slide">
+            <h2>Application to LASSO</h2>
+            <p>MDL-based selection can replace cross-validation for tuning \( \lambda \), reducing overfitting risk.</p>
+        </div>
+    
+        <div class="slide">
+            <h2>Simulation Results</h2>
+            <p>Experiments show MDL selects better tuning parameters while being computationally efficient.</p>
+        </div>
+    
+        <div class="slide">
+            <h2>Conclusion</h2>
+            <p>MDL-based model selection provides a principled, efficient alternative to cross-validation.</p>
+        </div>
+    
+        <div class="nav-buttons">
+            <button class="prev-btn">Previous</button>
+            <button class="next-btn">Next</button>
+        </div>
+    </div>
+    
+</body>
+</html>
